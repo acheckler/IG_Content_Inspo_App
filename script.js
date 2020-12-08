@@ -1,11 +1,30 @@
 'use strict'
 
 const unsplashID = "RB0c5XN-C4SiX0b5hQwEgq_-FSZ1zi00xCtLXON7UY0"
-const unsplashURL = "https://api.unsplash.com/search/photos"
+const unsplashURL = "https://api.unsplash.com/photos/random"
 const qgURL = "https://quote-garden.herokuapp.com/api/v2/"
 
+function generateWelcomePage() {
 
+  return `
+    <div class = "welcome-page">
+      <h2> Hello! <h2>
+        <p> This app is for those whom have an idea, or topic, they'd like to post about, but they need the content for it! <p>
+        <p> Simply fill out the search form using your topic as a keyword (e.g. reading, yoga, coffee, etc) and you'll recieve pictures and quotes related to your topic! <p>
+        <p> Take the content from this app, edit it to your asthetic desires, and now you've got an Instagram post or story! <p>
+        <button type = "button" id = "start"> Let's go! </button>
+    </div>
+  `
+}
+
+function watchStartButton() {
+  $('.welcome-page').on('click', '#start', function(event) {
+    event.preventDefault();
+    render();
+  });
+}
 function watchForm() {
+  
   $('#js-form').submit(event => {
     event.preventDefault();
     var picSearchTerm = $('#photo-search-term').val();
@@ -28,11 +47,14 @@ function getPictures(picSearchTerm, picColor) {
   const params = {
     client_id: unsplashID,
     query: picSearchTerm,
-    per_page: 3,
-    color: picColor
+    count: 3,
+  }
+  if (picColor != "none") {
+    params.color = picColor
   }
   const queryString = formatQueryParams(params);
   const url = unsplashURL + '?' + queryString;
+  console.log(url);
 
   
   fetch(url)
@@ -75,7 +97,7 @@ fetch(url)
 }
 
 function displayQuotes(responseJson) {
-  console.log(responseJson);
+  $('.quote-list').empty();
   for(let i = 0; i < responseJson.quotes.length; i++){
     $('.quote-list').append(
       `<li> <p> '${responseJson.quotes[i].quoteText}' </p>
@@ -89,10 +111,11 @@ function displayQuotes(responseJson) {
 }
 
 function displayPictures(responseJson) {
-  for(let i = 0; i < responseJson.results.length; i++) {
+  $('.photos').empty();
+  for(let i = 0; i < responseJson.length; i++) {
     $('.photos').append(
-      `<li> <img src ='${responseJson.results[i].urls.regular}'>
-      <p>${responseJson.results[i].description}</p>
+      `<li> <img src ='${responseJson[i].urls.regular}'>
+      <p>${responseJson[i].description}</p>
       </li>
       `
     )
@@ -101,6 +124,7 @@ function displayPictures(responseJson) {
 
 
 function render() {
+  $(generateWelcomePage)
   $(watchForm);
 }
 
