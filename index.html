@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title></title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -12,11 +12,10 @@
     <section>
       
       <form id = "js-form">
-        <label for = "photo-search-term"> Search for photos by keyword</label>
+        <label for = "photo-search-term"> Search for photos by keyword: </label>
         <input type = "text" id = "photo-search-term" max = 25 required>
-        <label for = "photo-search-color">(Optional) Photo color scheme:</label>
+        <label for = "photo-search-color">Photo color scheme:</label>
         <select id = "photo-seach-color">
-          <option value = "none"> None </option>
           <option value = "black_and_white"> Black & White </option>
           <option value = "black">Black</option>
           <option value = "white">White</option>
@@ -29,17 +28,17 @@
           <option value = "teal">Teal</option>
           <option value = "blue">Blue</option>
         </select>
-        <label for = "quote-search"> Select which way to search quotes </label>
+        <label for = "quote-search"> Select which way to search quotes:</label>
         <select id = "quote-search-type">
             <option value ="quotes">Keyword</option>
             <option value ="genres">Genres</option>
         </select>
-        <label for = "quote-search-text"> Quote search term </label>
-        <input type = "text" id = "quote-search-term">
+        <label for = "quote-search-text"> Quote search term: </label>
+        <input type = "text" id = "quote-search-term" required> 
         <input type = "submit" value = "submit">
       </form>
       <section id = "quote-results">
-        <ul class = "quote-list">
+        <ul class = "quotes">
         </ul>
       </section>
       <section id = "photo-results">
