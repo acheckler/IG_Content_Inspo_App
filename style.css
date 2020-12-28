@@ -2,14 +2,12 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     background-color: #D7D5D7;
-
 }
 
 /* Landing Page Styles*/
+
 .landing-page {
     display: flex;
     flex-direction: column;
@@ -18,8 +16,6 @@ body {
     padding-top: 30px;
     padding-right: 10px;
     padding-left: 10px;
-    
-    
 }
 
 #start-button {
@@ -27,28 +23,27 @@ body {
     color: black;
     font-family: 'Roboto Slab', serif;
     width: 100px;
-    
-    
 }
 
 .start-button {
     display: flex;
     justify-content: center;
 }
+
 #start-button:hover {
     background-color: #918D91;
     color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 /*Search Page Styles*/
+
 .search-form {
     display: flex;
     flex-direction: column;
     font-family: 'Roboto Slab', serif;
     justify-content: center;
-} 
+}
 
 .form-inputs {
     padding: 10px;
@@ -59,19 +54,18 @@ body {
 #submit-button {
     font-family: 'Roboto Slab', serif;
 }
+
 .submit-button {
     display: flex;
     justify-content: center;
-    
-    
 }
-
 
 #error-message {
     font-family: 'Roboto Slab', serif;
 }
 
 /*Results Page Styles*/
+
 .photos {
     list-style: none;
 }
@@ -83,7 +77,6 @@ body {
 #fetch-image {
     max-width: 400px;
     max-height: 400px;
-    
 }
 
 .quotes {
@@ -100,18 +93,10 @@ body {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        
     }
     .search-panel {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
-        
     }
-
-   
-    
 }
-
-/*** align-item center

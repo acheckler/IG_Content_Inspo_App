@@ -23,7 +23,7 @@ function watchForm() {
     getQuotes(quoteSearchTerm, quoteSearchType);
     $('.photos').empty();
     $('.quotes').empty();
-    
+
   });
 }
 
@@ -57,7 +57,6 @@ function getPictures(picSearchTerm, picColor) {
       displayPictures(responseJson.results[random]);
     })
     .catch(err => {
-      console.log(err);
       $('#error-message').text(`Could not find a photo with given keyword(s). Please try using another search term.`);
     });
 }
@@ -74,7 +73,6 @@ function getQuotes(quoteSearchTerm, quoteSearchType) {
   }
   const queryString = formatQueryParams(params);
   const url = qgURL + '?' + queryString;
-  console.log(url);
   fetch(url)
     .then(response => {
       if (response.ok) {
@@ -83,11 +81,10 @@ function getQuotes(quoteSearchTerm, quoteSearchType) {
       throw new Error(response.statusText);
     })
     .then(responseJson => {
-      console.log(responseJson);
       displayQuotes(responseJson);
     })
     .catch(err => {
-      
+
       $('#error-message').text(`Could not find a quote with given keyword(s). Please try using another search term.`);
     });
 }
