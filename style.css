@@ -88,6 +88,12 @@ body {
     display: none;
 }
 
+#food-picture {
+    max-width: 690px;
+    min-width: 462px;
+
+}
+
 @media only screen and (min-width: 700px) {
     .start-page {
         display: flex;
@@ -98,5 +104,11 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    #food-picture {
+        width: 100%;
+        max-width: 1200px;
+        min-height: 804px;
     }
 }
