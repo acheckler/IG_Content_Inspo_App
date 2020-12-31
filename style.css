@@ -105,7 +105,6 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-
     #food-picture {
         width: 100%;
         max-width: 1200px;
