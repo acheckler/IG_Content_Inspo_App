@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Social Media Content Curator</title>
-  <html lang="en">
-
-  </html>
+  
   <link rel='shortcut icon' type='image/x-icon' href="favicon.ico?">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;500;700&display=swap" rel="stylesheet"/>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<main>
-
   <body>
-    <section class="start-page">
+    <main>
+      <section class="start-page">
       <div class="hide-landing-page">
         <div class="landing-page">
           <h1>Content Curator for Social Media Posts</h1>
@@ -34,14 +31,12 @@
       </div>
     </section>
     <section class="search-panel">
-      <div id="error-message">
-      </div>
       <div class="search-instructions hidden">
-        <p>Fill out the form below with search terms for photos and quotes</p>
+        <p>Fill out the form below with search terms for photos and quotes. For pictures, select the color scheme you are looking for. For quotes, choose either to search for quotes with a keyword or a genre.</p>
       </div>
       <form id="js-form" class="search-form hidden">
         <label for="photo-search-term">Search for photos by keyword:</label>
-        <input type="text" id="photo-search-term" class="form-inputs" max=25 required>
+        <input type="text" id="photo-search-term" class="form-inputs" required>
         <label for="photo-search-color">Photo color scheme:</label>
         <select id="photo-search-color" class="form-inputs">
           <option value="black_and_white"> Black & White </option>
@@ -65,10 +60,12 @@
         <input type="text" id="quote-search-term" class="form-inputs" required>
 
         <input type="submit" id="submit-button" value="Submit">
+        <div id="error-message">
         </div>
       </form>
     </section>
     <div id="results-container">
+      <p> The images are randomized, so if you are unhappy with your result please try the same search again!</p>
       <section id="quote-results">
         <ul class="quotes">
         </ul>
@@ -81,7 +78,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-  </body>
-</main>
+  </main>
+</body>
+
 
 </html>
